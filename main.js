@@ -40,3 +40,45 @@ function closeAllMenus(){
         }
     })
 }
+
+const productList = []
+
+productList.push({
+    name: 'Bike',
+    price: '120',
+    image: './assets/pexels-google-deepmind-17485817.jpg',
+})
+
+{/* <div class="product-card">
+    <img src="assets\pexels-google-deepmind-17485817.jpg" alt="">
+    <div class="product-info">
+        <div>
+            <p>120,00$</p>
+            <p>Product</p>
+        </div>
+        <figure>
+            <img src="./assets/icons/bt_add_to_cart.svg" alt="">
+        </figure>
+    </div>
+</div> */}
+
+for (product of productList) {
+    const productCard = document.createElement('div')
+    productCard.classList.add('product-card')
+
+    const img = document.createElement('img')
+    img.setAttribute('src', product.image)
+
+    const productInfo = document.createElement('div')
+    productInfo.classList.add('product-info')
+    
+    const productInfoDiv = document.createElement('div')
+    
+    const productPrice = document.createElement('p')
+    productPrice.innerText = '$' + product.price
+
+    const productName = document.createElement('p')
+    productName.innerText = product.name
+
+    const productInfoFigure = document.createElement('figure')
+}
