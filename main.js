@@ -7,6 +7,7 @@ const shoppingIcon = document.querySelector('.navbar-shopping-cart')
 const desktopMenu = document.querySelector('.desktop-menu')
 const mobileMenu = document.querySelector('.mobile-menu')
 const aside = document.querySelector('.product-detail')
+const cardsContainer = document.querySelector('.cards-container')
 
 menuEmail.addEventListener('click', () => toggleMenu(desktopMenu))
 actionBarMenu.addEventListener('click', () => toggleMenu(mobileMenu))
@@ -49,36 +50,48 @@ productList.push({
     image: './assets/pexels-google-deepmind-17485817.jpg',
 })
 
-{/* <div class="product-card">
-    <img src="assets\pexels-google-deepmind-17485817.jpg" alt="">
-    <div class="product-info">
-        <div>
-            <p>120,00$</p>
-            <p>Product</p>
-        </div>
-        <figure>
-            <img src="./assets/icons/bt_add_to_cart.svg" alt="">
-        </figure>
-    </div>
-</div> */}
+productList.push({
+    name: 'Hora',
+    price: '2825',
+    image: './assets/pexels-google-deepmind-17485817.jpg',
+})
 
-for (product of productList) {
-    const productCard = document.createElement('div')
-    productCard.classList.add('product-card')
-
-    const img = document.createElement('img')
-    img.setAttribute('src', product.image)
-
-    const productInfo = document.createElement('div')
-    productInfo.classList.add('product-info')
+function renderProducts(arr){
+    for (product of arr) {
+        const productCard = document.createElement('div')
+        productCard.classList.add('product-card')
     
-    const productInfoDiv = document.createElement('div')
+        const productImg = document.createElement('img')
+        productImg.setAttribute('src', product.image)
     
-    const productPrice = document.createElement('p')
-    productPrice.innerText = '$' + product.price
-
-    const productName = document.createElement('p')
-    productName.innerText = product.name
-
-    const productInfoFigure = document.createElement('figure')
+        const productInfo = document.createElement('div')
+        productInfo.classList.add('product-info')
+        
+        const productInfoDiv = document.createElement('div')
+        
+        const productPrice = document.createElement('p')
+        productPrice.innerText = '$' + product.price
+    
+        const productName = document.createElement('p')
+        productName.innerText = product.name
+    
+        productInfoDiv.appendChild(productPrice)
+        productInfoDiv.appendChild(productName)
+    
+        const productInfoFigure = document.createElement('figure')
+        const productImgCart = document.createElement('img')
+        productImgCart.setAttribute('src', './assets/icons/bt_add_to_cart.svg')
+    
+        productInfoFigure.appendChild(productImgCart)
+    
+        productInfo.appendChild(productInfoDiv)
+        productInfo.appendChild(productInfoFigure)
+    
+        productCard.appendChild(productImg)
+        productCard.appendChild(productInfo)
+    
+        cardsContainer.appendChild(productCard)
+    }
 }
+
+renderProducts(productList)
