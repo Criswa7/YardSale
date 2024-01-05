@@ -1,4 +1,5 @@
 //Clickables
+const logo = document.querySelector('.logo')
 const menuEmail = document.querySelector('.navbar-email')
 const actionBarMenu = document.querySelector('.menu')
 const shoppingIcon = document.querySelector('.navbar-shopping-cart')
@@ -11,6 +12,7 @@ const shoppingCartContainer = document.querySelector('#shoppingCartContainer')
 const productDetailContainer = document.querySelector('#productDetail')
 const cardsContainer = document.querySelector('.cards-container')
 
+logo.addEventListener('click', closeAllMenus)
 menuEmail.addEventListener('click', () => toggleMenu(desktopMenu))
 actionBarMenu.addEventListener('click', () => toggleMenu(mobileMenu))
 shoppingIcon.addEventListener('click', () => toggleMenu(shoppingCartContainer))
@@ -25,7 +27,7 @@ function toggleMenu (menuElement){
         }, 300); // El tiempo debe coincidir con la duración de la transición
     } else {
         closeAllMenus()
-        menuElement.style.display = 'block';
+        menuElement.style.display = 'flex';
         // Necesitamos darle tiempo al navegador para aplicar el display: block antes de agregar la clase active
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
