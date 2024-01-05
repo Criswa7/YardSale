@@ -6,12 +6,12 @@ const shoppingIcon = document.querySelector('.navbar-shopping-cart')
 //Menus
 const desktopMenu = document.querySelector('.desktop-menu')
 const mobileMenu = document.querySelector('.mobile-menu')
-const aside = document.querySelector('.product-detail')
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer')
 const cardsContainer = document.querySelector('.cards-container')
 
 menuEmail.addEventListener('click', () => toggleMenu(desktopMenu))
 actionBarMenu.addEventListener('click', () => toggleMenu(mobileMenu))
-shoppingIcon.addEventListener('click', () => toggleMenu(aside))
+shoppingIcon.addEventListener('click', () => toggleMenu(shoppingCartContainer))
 
 function toggleMenu (menuElement){
     if (menuElement.classList.contains('active')) {

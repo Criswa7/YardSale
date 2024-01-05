@@ -11,6 +11,20 @@
     <title>YardSale</title>
 </head>
 <body>
+    <div class="desktop-menu animated-menu slide-in-top">
+        <ul>
+            <li>
+                <a href="/" class="title">My orders</a>
+            </li>
+            <li>
+                <a href="/">My account</a>
+            </li>
+            <li>
+                <a href="/">Sign Out</a>
+            </li>
+        </ul>
+    </div>
+    
     <nav>
         <img src="./assets/icons/icon_menu.svg" alt="menu" class="menu">
 
@@ -32,20 +46,6 @@
                 <li class="navbar-shopping-cart">
                     <img src="./assets/icons/icon_shopping_cart.svg" alt="shopping cart">
                     <div>6</div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="desktop-menu animated-menu slide-in-top">
-            <ul>
-                <li>
-                    <a href="/" class="title">My orders</a>
-                </li>
-                <li>
-                    <a href="/">My account</a>
-                </li>
-                <li>
-                    <a href="/">Sign Out</a>
                 </li>
             </ul>
         </div>
@@ -94,7 +94,7 @@
         </div>
     </nav>
 
-    <aside class="product-detail animated-menu slide-in-right">
+    <aside id="shoppingCartContainer" class="animated-menu slide-in-right">
         <div class="title-container">
           <img src="./assets/icons/flechita.svg" alt="arrow">
           <p class="title">My order</p>
@@ -135,6 +135,27 @@
           </button>
         </div>
     </aside>
+
+    <aside id="productDetail" class="animated-menu slide-in-right">
+        <div class="product-detail-close">
+          <img src="./assets/icons/icon_close.png" alt="close">
+        </div>
+        <img src="./assets\pexels-photo-276517.jpeg" alt="product">
+        <div class="points">
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+        </div>
+        <div class="product-info">
+          <p>$35,00</p>
+          <p>Product</p>
+          <p>With its practical position, this product a lso fulfills a decorative function, add your hall or workspace.</p>
+          <button class="primary-button add-to-cart-button">
+            <img src="./assets/icons/bt_add_to_cart.svg" alt="add to cart">
+            Add to cart
+          </button>
+        </div>
+      </aside>
 
     <section class="main-container">
         <div class="cards-container"></div>
