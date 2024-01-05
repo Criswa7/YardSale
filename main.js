@@ -2,16 +2,20 @@
 const menuEmail = document.querySelector('.navbar-email')
 const actionBarMenu = document.querySelector('.menu')
 const shoppingIcon = document.querySelector('.navbar-shopping-cart')
+const productDetailCloseIcon = document.querySelector('.product-detail-close')
 
 //Menus
 const desktopMenu = document.querySelector('.desktop-menu')
 const mobileMenu = document.querySelector('.mobile-menu')
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer')
+const productDetailContainer = document.querySelector('#productDetail')
 const cardsContainer = document.querySelector('.cards-container')
 
 menuEmail.addEventListener('click', () => toggleMenu(desktopMenu))
 actionBarMenu.addEventListener('click', () => toggleMenu(mobileMenu))
 shoppingIcon.addEventListener('click', () => toggleMenu(shoppingCartContainer))
+productDetailCloseIcon.addEventListener('click', () => toggleMenu(productDetailContainer))
+
 
 function toggleMenu (menuElement){
     if (menuElement.classList.contains('active')) {
@@ -56,6 +60,18 @@ productList.push({
     image: './assets/pexels-google-deepmind-17485817.jpg',
 })
 
+productList.push({
+    name: 'Item',
+    price: '36987',
+    image: './assets/pexels-google-deepmind-17485817.jpg',
+})
+
+productList.push({
+    name: 'Elemento',
+    price: '456',
+    image: './assets/pexels-google-deepmind-17485817.jpg',
+})
+
 function renderProducts(arr){
     for (product of arr) {
         const productCard = document.createElement('div')
@@ -63,6 +79,7 @@ function renderProducts(arr){
     
         const productImg = document.createElement('img')
         productImg.setAttribute('src', product.image)
+        productImg.addEventListener('click', () => toggleMenu(productDetailContainer))
     
         const productInfo = document.createElement('div')
         productInfo.classList.add('product-info')
